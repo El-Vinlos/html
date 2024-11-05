@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:ital@0;1&family=Space+Mono:wght@700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 20px;
+    height: 100vh;
+    background-color: #75989a;
+}
+
+.content-container{
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.header-container{
+    text-align: center;
+}
+
+h4 {
+    color: #021e29;
+}
+
+.card-container {
+    height: 30vh;
+    color:  #021e29;
+    display: flex;
+    flex-flow: row wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2%;
+    width: 15vh;
+    height: 30vh;
+}
+
+
+
+.title {
+    margin-top: 2vh;
+    font-family: 'Space Mono', monospace;
+    color: var(--title-color);
+    font-size: 1.3rem;
+}
+
+a {
+    font-family: 'Overpass', sans-serif;
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: var(--link-color);
+    margin-top: 2vh;
+}
+
+a:hover {
+    color: rgb(216, 202, 120);
+    transform: scale(1.8); 
+}
+
+
+.img-container
+{
+    justify-self: end;
+    grid-column: 1;
+    border-radius: 8px;
+    grid-row: 2;
+    
+}
+
+img {
+    width: 60vh;
+    height: 60vh;
+    margin-right: 15vh;
+    content: var(--image);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25), 0 5px 5px rgba(0, 0, 0, 0.12);
+}
+
+.labelline
+{
+    margin-top: 2vh;
+    font-family: 'Space Mono', monospace;
+    color: rgb(216, 202, 120);
+    font-size: 20px;
+    transform: translate(0px,-80px);
+    opacity: 0%;
+}
+.grow{ 
+    transition: all .2s ease;
+    }
+    
+.grow:hover { 
+    transform: scale(1.1); 
+    }
+
+.grow:hover + .labelline{ 
+    transform: translateY(0px);
+    opacity: 100%;
+    }
+
+.labelline
+{
+    transition: all 0.2s ease;
+}
+.input_box {
+    border: none;
+    outline: none;
+    padding-bottom: 3px;
+    background: none;
+    width: 300px;
+    color: rgb(216, 202, 120);
+    font-family: 'Overpass', sans-serif;
+    font-size: 22px;
+    border-radius: 0px 0px 0px 0px;
+    text-align: center;
+}
+
+.input_box:focus 
+{
+  border-bottom: 2px solid palegoldenrod;
+  width: 400px;
+}
+
+.input_box{
+      transition: all 0.15s ease;
+}
