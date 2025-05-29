@@ -11,7 +11,7 @@
 <body>
     
     <div class="img-container">
-        <img class="image grow" alt="main image" src="mushashi.png">
+        <img class="image grow" alt="main image" src="mushashi.png" id="mu">
         <div class="labelline">
             <h1>
                 宮本 武藏
@@ -42,7 +42,7 @@
        </pre>
              </h1>
 <div id="gsearch" style="display:block;">
-            <form id="textfield" class="google" action="https://www.duckduckgo.com" method="get">
+            <form id="textfield" class="brave" action="https://search.brave.com/" method="get">
               <input class="input_box" type="text" name="q" placeholder="The strong are always kind" autofocus="" autocomplete="off">
             </form>
           </div>
@@ -86,7 +86,24 @@
             <a href="https://jisho.org/">Jisho</a>
             <a href="https://hvdic.thivien.net/">HanViet</a>
             <a href="https://translate.google.com">Translate</a>
+
+            
+    </div>
 </div>
 </div>
+
+<footer id="footer">
+    <div id="loader"></div>
+    <h2 id="current-time"></h1>
+</footer>
+
+<script>
+    setInterval(() => {
+        let time = document.getElementById("current-time");
+        let d = new Date();
+        time.innerHTML = d.toLocaleTimeString() + " " + d.toLocaleDateString();
+        document.getElementById("loader").style.display = 'none';
+    }, 1000);
+</script>
 </body>
 </html>

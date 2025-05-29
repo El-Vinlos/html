@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Overpass:ital@0;1&family=Space+Mono:wght@700&display=swap');
 
+:root{
+    --first-color:	palegoldenrod;
+    --second-color: #021e29;
+    --third-color: #adebb3;
+    
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -11,7 +18,8 @@ body {
     grid-template-rows: repeat(3, 1fr);
     gap: 20px;
     height: 100vh;
-    background-color: #75989a;
+    background-image: url("background.png");
+    
 }
 
 .content-container{
@@ -23,13 +31,14 @@ body {
     text-align: center;
 }
 
+
 h4 {
-    color: #021e29;
+    color: var(--first-color);
 }
 
 .card-container {
     height: 30vh;
-    color:  #021e29;
+    color:  var(--second-color);
     display: flex;
     flex-flow: row wrap;
     gap: 20px;
@@ -50,7 +59,7 @@ h4 {
 .title {
     margin-top: 2vh;
     font-family: 'Space Mono', monospace;
-    color: var(--title-color);
+    color: var(--first-color);
     font-size: 1.3rem;
 }
 
@@ -58,12 +67,13 @@ a {
     font-family: 'Overpass', sans-serif;
     text-decoration: none;
     font-size: 1.2rem;
-    color: var(--link-color);
+    color: var(--third-color);
+    font-size: 1.3rem;
     margin-top: 2vh;
 }
 
 a:hover {
-    color: rgb(216, 202, 120);
+    color: var(--first-color);
     transform: scale(1.8); 
 }
 
@@ -74,8 +84,8 @@ a:hover {
     grid-column: 1;
     border-radius: 8px;
     grid-row: 2;
-    
 }
+
 
 img {
     width: 60vh;
@@ -85,14 +95,20 @@ img {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25), 0 5px 5px rgba(0, 0, 0, 0.12);
 }
 
+#mu{
+    z-index: 99;
+}
+
 .labelline
 {
     margin-top: 2vh;
     font-family: 'Space Mono', monospace;
-    color: rgb(216, 202, 120);
+    color: var(--first-color);
     font-size: 20px;
     transform: translate(0px,-80px);
-    opacity: 0%;
+    opacity: 0;
+    transition: all 0.2s ease;
+    z-index: auto;
 }
 .grow{ 
     transition: all .2s ease;
@@ -104,20 +120,16 @@ img {
 
 .grow:hover + .labelline{ 
     transform: translateY(0px);
-    opacity: 100%;
+    opacity: 1;
     }
 
-.labelline
-{
-    transition: all 0.2s ease;
-}
 .input_box {
     border: none;
     outline: none;
     padding-bottom: 3px;
     background: none;
     width: 300px;
-    color: rgb(216, 202, 120);
+    color: var(--first-color);
     font-family: 'Overpass', sans-serif;
     font-size: 22px;
     border-radius: 0px 0px 0px 0px;
@@ -126,10 +138,38 @@ img {
 
 .input_box:focus 
 {
-  border-bottom: 2px solid palegoldenrod;
+  border-bottom: 2px solid var(--first-color);
   width: 400px;
 }
 
 .input_box{
       transition: all 0.15s ease;
 }
+
+footer
+{
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    height: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--first-color);
+    background: var(--second-color);
+    font-family: 'Overpass', sans-serif;
+
+}
+#loader {
+    border: 5px solid var(--first-color);
+    border-radius: 50%;
+    border-top: 5px solid var(--third-color);
+    width: 10px;
+    height: 10px;
+    animation: spin 1s linear infinite;
+}
+        @keyframes spin {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
