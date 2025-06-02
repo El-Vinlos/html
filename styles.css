@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Overpass:ital@0;1&family=Space+Mono:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');
 
 :root{
     --first-color:	palegoldenrod;
@@ -102,9 +103,9 @@ img {
 .labelline
 {
     margin-top: 2vh;
-    font-family: 'Space Mono', monospace;
+    font-family: 'Dela Gothic One';
     color: var(--first-color);
-    font-size: 20px;
+    font-size: 35px;
     transform: translate(0px,-80px);
     opacity: 0;
     transition: all 0.2s ease;
