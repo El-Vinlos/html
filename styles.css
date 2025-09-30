@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Overpass:ital@0;1&family=Space+Mono:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css1?family=Overpass:ital@0;1&family=Space+Mono:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');
 
 :root {
@@ -229,3 +229,45 @@ footer {
     text-align: center;
   }
 }
+
+/* Scale everything 40% bigger on large screens (1920px+) */
+@media (min-width: 1920px) {
+  /* Containers / cards */
+  .container {
+    width: calc(15vh * 1.4);   /* 40% bigger */
+    height: calc(30vh * 1.4);
+  }
+
+  /* Card container gap */
+  .card-container {
+    gap: 28px; /* increase proportionally */
+  }
+
+  /* Titles */
+  .title {
+    font-size: calc(1.1rem * 1.4);
+  }
+
+  /* Links */
+  a {
+    font-size: calc(1.3rem * 1.4);
+  }
+
+  /* Labels */
+  .labelline {
+    font-size: clamp(28px, 3.5vw, 45px);
+  }
+
+  /* Images */
+  .img-container img {
+    max-width: calc(80% * 1.4);  /* scale image 40% bigger */
+    height: auto;
+  }
+
+  /* Input box */
+  .input_box {
+    font-size: calc(clamp(16px, 10vw, 22px) * 1.4);
+    width: calc(clamp(250px, 40vw, 400px) * 1.4);
+  }
+}
+
