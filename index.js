@@ -48,8 +48,10 @@ function resize() {
 window.addEventListener("resize", resize);
 
 function draw() {
-  ctx.fillStyle = "#75989a"; // background-color
-  ctx.fillRect(0,0,canvas.width,canvas.height);
+  const styles = getComputedStyle(document.documentElement);
+  const bgColor = styles.getPropertyValue('--background-color').trim() || "#75989a";
+  ctx.fillStyle = bgColor;
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
 
   let step = 16; // vertical spacing
   for (let y = -100; y < canvas.height+100; y += step) {
@@ -72,16 +74,14 @@ function draw() {
   }
 
   // subtle grain
-  let imageData = ctx.getImageData(0,0,canvas.width,canvas.height);
-  let data = imageData.data;
-  for (let i=0; i<data.length; i+=4) {
-    if (Math.random() < 0.001) {
-      let shade = 50 + Math.random()*20;
-      data[i] = data[i+1] = data[i+2] = shade;
-      data[i+3] = 255;
-    }
+  const grainCount = Math.floor(canvas.width * canvas.height * 0.001);
+  for (let i = 0; i < grainCount; i++) {
+    let rx = Math.random() * canvas.width;
+    let ry = Math.random() * canvas.height;
+    let shade = Math.floor(50 + Math.random() * 20);
+    ctx.fillStyle = `rgb(${shade},${shade},${shade})`;
+    ctx.fillRect(rx, ry, 1, 1);
   }
-  ctx.putImageData(imageData,0,0);
 }
 
 resize();
